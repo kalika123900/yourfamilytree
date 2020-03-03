@@ -1,0 +1,158 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+.capture label{
+    font-size: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+.capture .form-group{
+    margin-bottom:0px;
+}
+.form-control{
+    font-size: 0.5rem;
+    border-radius: 0px;
+    
+}
+/*NEW CSS */
+ 
+ .form-control{
+  padding: 10px;
+  font-size: 20px;
+  width: 800px;
+  }
+  .search-page .form{
+    margin-top: 20%;
+  }
+  .search-result .form{
+    margin-top: 2%;
+  }
+  .search-result{
+    width: 60%
+  }
+  .search-page .box-search,.search-result .box-search{
+    width: 80%;
+    display: inline-block;
+  }
+  .search-page .btn-search,.search-result .btn-search{
+    width: 20%;
+    margin-left: -20px;
+    display: inline-block;
+    background: #6ba5bb;
+    color: #fff;
+    padding: 0.4rem 0.75rem;
+    font-size: 1rem!important;
+  }
+  .search-result .result-items{
+    text-align: left;
+  }
+  
+  .button{
+    text-align:center;
+    margin-top:30px;
+  }
+  .search-nav{
+      font-size: 15px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      float: right;
+      margin-top: 10px;
+  }
+  
+  .search-page .bottom-link,.search-result .bottom-link{   
+    width: 100%;
+    text-align: center;
+  }
+  .search-page .bottom-link li,.search-result .bottom-link li{
+    display: inline-block;
+    text-align: center;
+    margin: 0px;
+    border-right: 2px solid #b1b5ce;
+    padding: 0px 15px 0px;
+    list-style: none;
+    line-height: 18px;
+    
+  }
+  .search-page .bottom-link li:last-child, .search-result .bottom-link li:last-child{
+    border-right: none;
+  }
+  .search-page .bottom-link li a, .search-result .bottom-link li a{
+    text-decoration: none;
+    color: #6ba5bb;
+  }
+  .search-result .result-items .card{
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 0;
+    box-shadow: 0 30px 22px -20px rgba(0, 0, 0, 0.2);
+}
+.search-result .result-items .card:hover{
+    background: #6ba5bb;
+    color:#fff;
+}
+.search-result .result-items .card:hover .btn-show{
+    color: #6ba5bb;
+    background:#fff;
+}
+.search-result .result-items .card .btn-show{
+    background: #6ba5bb;
+    color: #fff;
+}
+.search-result .result-items .card .btn-show:hover{
+    color: #6ba5bb;
+    background:#fff;
+}
+.search-result .btn-load{
+    margin-left:40%;
+}
+.capture h1{font-size: 1.2rem!important;}
+.capture .h4, .capture h4{font-size: 0.8rem!important;}
+.capture h5{font-size: 0.8rem !important;}
+.capture .alert{
+    position: relative !important;
+    padding: .25rem 0.25rem !important;
+    margin-bottom: 0rem !important;
+    border: 1px solid transparent !important;
+    border-radius: .25rem !important;
+    margin-top: 0.5rem!important;
+    font-size: 0.5rem !important;
+
+}
+.capture .row{
+    margin:0px !important;
+}
+.capture .col-md-4, .capture .col-md-3, .capture .col-md-5, .capture .col-md-12,.capture .col-md-6,.capture .col-md-2,.capture .col-2,.capture .col-4,.capture .col-3,.capture .col-12,.capture .col-5,.capture .col-2,.capture .col-6{
+ padding: 0px !important;
+}
+.capture .dashboard {
+    padding: 0 40px;
+}
+
+.capture .status {
+    color: red;
+}
+@media only screen and (min-width: 920px) {
+    /* For mobile phones: */
+    .capture h1{
+        font-size: 2.5rem !important;
+    }
+    .capture .h4{
+        font-size: 1.5rem!important;
+    }
+    .capture .alert{
+        font-size: 1rem !important;
+    }
+    .capture h5{
+        font-size: 1.25rem!important;
+    }
+    .capture label, .capture input.form-control,.capture select.form-control,.capture button,.capture .btn-primary{
+        font-size: 1rem!important;
+    }
+   
+  }

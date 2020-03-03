@@ -11,6 +11,7 @@ import Aftersubmition from './Aftersubmition';
 import Aboutus from './Aboutus';
 import Contact from './Contact';
 import Tree from './Tree';
+import Join from'./Join';
 import Profile from './Profile';
 import PropTypes from 'prop-types'
 import {makeSecureDecrypt} from '../helper/security';
@@ -93,18 +94,19 @@ class App extends Component {
 	}
  	render() {
 		ReactGA.initialize('UA-155190286-1');
-		return <BrowserRouter>
+		return <BrowserRouter basename="/yourfamilytree/src/">
 				<GAListener>
 					<div className="main">{this.generateHeader()}
 						<Switch>
 							<Route exact path="/" render={props=>(<Search {...props} />)} />
 							<Route exact path="/loginpage" render={props =>(<LoginPage  {...props} isLogin={this.state.isLogin}/>)} />
-							<Route exact path="/landingpage" render={props => (<Landingpage {...props} submitSuccess={this.takeSuggestion}/>)} />
+							<Route exact path="/join" render={props=>(<Join {...props} {...props} submitSuccess={this.takeSuggestion}/>)} />
+							<Route exact path="/landingpage" render={props => (<Landingpage {...props}/>)} />
 							<Route exact path="/advancesearch" render={props => (<Advancesearch {...props} submitSuccess={this.takeSuggestion}/>)} />
 							<Route exact path="/suggestion" render={props=>(<Aftersubmition {...props} uuid={this.state.uuid}/>)} />
 							<Route exact path="/search-result" render={props=>(<SearchResult {...props} />)} />
 							<Route exact path="/aboutus" render={props=>(<Aboutus {...props} />)} />
-							<Route exact path="/contact" render={props=>(<Contact {...props} />)} />
+							<Route exact path="/contact" render={props=>(<Contact {...props} />)} />	
 							<Route exact path="/profile" render={props=>(<Profile {...props} uuid={this.state.uuid}/>)} />
 							<Route path="/person/:uuid" render={props=>(<Tree {...props} />)} />
 						</Switch>
