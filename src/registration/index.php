@@ -230,6 +230,12 @@ if(count($brothers)>0 && count($sisters)>0)
 {
     handleBrotherSisterRelation($brothers,$sisters);
 }
+$password = random_strings(8);
+$setPassword = [];
+$setPassword['uuid'] = $master_uuid;
+$setPassword['email'] = $_POST['email'];
+$setPassword['password'] = $password;
+changePassword($setPassword);
 $response['status'] = 'success';
 $response['message'] = 'Data Inserted Successfully!';
 $response['data'] = array('uuid'=>$master_uuid);

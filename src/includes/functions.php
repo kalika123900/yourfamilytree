@@ -4,6 +4,19 @@ const root = '/';
 const siteHeader = 'YOURFAMILYTREE.in';
 
 require_once($_SERVER['DOCUMENT_ROOT']."/includes/vendor/autoload.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+$emailHost       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+$emailUsername   = 'yourfamilytree.in@gmail.com';                     // SMTP username
+$emailPassword   = 'Kayass1992!@#';                               // SMTP password
+$emailPort       =  587;                                    // TCP port to connect to
+$mail = new PHPMailer(true);
+
+require_once($_SERVER['DOCUMENT_ROOT']."/includes/email_templates.php");
+
 $types = [10=>'super-admin',3=>'admin',2=>'moderator',1=>'contributor',0=>'follower'];
 $image_path = '/www/clients/kworld.com/src/uploads/images/';
 $image_url = 'https://www.yourfamilytree.in/uploads/images/';
@@ -1356,7 +1369,7 @@ function searchPeople($data){
         $temp['fullName'] .= ucfirst($pplObj->value('last_name'));
        
         /*Marital Status*/
-        
+       
         if($pplObj->hasValue('marital_status'))
         {
             $temp['maritalStatus'] = $pplObj->value('marital_status');
@@ -1369,7 +1382,6 @@ function searchPeople($data){
         if($pplObj->hasValue('father_name'))
         {
             $temp['father'] = strtolower($pplObj->value('father_name'));
-            $temp['maritalStatus'] = 'm';
             $temp['father'] = ucfirst($temp['father']);
         }
         else
@@ -1408,6 +1420,7 @@ function searchPeopleEx($data){
         $temp['fullName'] .= $pplObj->value('last_name');
        
         /*Marital Status*/
+       
         if($pplObj->hasValue('marital_status'))
         {
             $temp['maritalStatus'] = $pplObj->value('marital_status');
@@ -1991,3 +2004,28 @@ $response['message'] = 'Data Updated Successfully!';
 $response['data'] = array('uuid'=>$master_uuid);
 echo json_encode($response);
 }
+
+function changePassword($data){
+    global $client,$mail;
+    $email   = $data['email'];
+    $password  = $data['password'];
+    $uuid = $data['uuid'];
+    $query = "MATCH (n:User {uuid:'$uuid'}) SET n.email='$email',n.password='$password'";
+  
+    $client->run($query);
+    $response = []; 
+    sendLoginCredentials($email,$password,$mail);
+    $response['status'] = 'success';
+    $response['message'] = 'Login Credentials set successfully!';
+   return true;
+}
+function random_strings($length_of_string) 
+{ 
+  
+    // String of all alphanumeric character 
+    $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
+  
+    // Shufle the $str_result and returns substring 
+    // of specified length 
+    return substr(str_shuffle($str_result), 0, $length_of_string); 
+} 

@@ -46,7 +46,7 @@ include_once($path.'/functions.php');
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript" src="/app/assets/bundle/main.bundle.js?q=1.14" ></script>
 
     </body>
