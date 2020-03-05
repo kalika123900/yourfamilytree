@@ -1,6 +1,6 @@
 
 <?php 
-$path = $_SERVER['DOCUMENT_ROOT'];
+$path = $_SERVER['DOCUMENT_ROOT'].'/yourfamilytree/src';
 include_once($path.'/functions.php');
 ?>
 <!doctype html>
@@ -10,7 +10,7 @@ include_once($path.'/functions.php');
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/app/assets/css/style.css?v=1.25" type="text/css">
+        <link rel="stylesheet" href="http://localhost/yourfamilytree/src/app/assets/css/style.css?v=1.25" type="text/css">
         <meta name="_globalsign-domain-verification" content="sm5NYPg064tfZrEgkcnEgK2mrcy2NV7ZIV8MYjdx4b" />
         <link
             rel="stylesheet"
@@ -33,14 +33,14 @@ include_once($path.'/functions.php');
             
     </head>
     <script type="text/javascript">
-        var STATIC_URL = 'https://www.yourfamilytree.in';
+        var STATIC_URL = 'http://localhost/yourfamilytree/src/';
     </script>
     <body>
 
         <div id="app"></div>
 
         <script type="text/javascript">
-        var IMAGE_URL = 'https://ik.imagekit.io/8do2qq3wl4q/';
+        var IMAGE_URL = 'http://localhost/yourfamilytree/src/';
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

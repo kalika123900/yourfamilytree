@@ -21,7 +21,7 @@ class Landingpage extends Component {
         brother: [],
         sister: [],
         children: [],
-        community: null,
+        community: [],
         gotraList: [],
         selectedCommunity: '',
         perfectHuman: { name: '', surname: '', dob: '', fname: '', fsurname: '', fdob: '', mname: '', msurname: '', mdob: '' }

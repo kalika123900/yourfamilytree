@@ -12,6 +12,7 @@ import Aboutus from './Aboutus';
 import Contact from './Contact';
 import Join from './Join';
 import Tree from './Tree';
+import Join from './Join';
 import Profile from './Profile';
 import PropTypes from 'prop-types'
 import { makeSecureDecrypt } from '../helper/security';
